@@ -476,7 +476,7 @@ Description:	Show status of f2fs superblock in real time.
 
 What:		/sys/fs/f2fs/<disk>/stat/cp_status
 Date:		September 2022
-Contact:	"Chao Yu" <chao.yu@oppo.com>
+Contact:	"Chao Yu"
 Description:	Show status of f2fs checkpoint in real time.
 
 		=============================== ==============================
@@ -673,14 +673,14 @@ Description:	When DATA SEPARATION is on, it controls the age threshold to indica
 
 What:		/sys/fs/f2fs/<disk>/fault_rate
 Date:		May 2016
-Contact:	"Sheng Yong" <shengyong@oppo.com>
+Contact:	"Sheng Yong"
 Contact:	"Chao Yu" <chao@kernel.org>
 Description:	Enable fault injection in all supported types with
 		specified injection rate.
 
 What:		/sys/fs/f2fs/<disk>/fault_type
 Date:		May 2016
-Contact:	"Sheng Yong" <shengyong@oppo.com>
+Contact:	"Sheng Yong"
 Contact:	"Chao Yu" <chao@kernel.org>
 Description:	Support configuring fault injection type, should be
 		enabled with fault_injection option, fault type value
@@ -741,3 +741,9 @@ Description:	When compress cache is on, it controls cached page
 		If cached page percent exceed threshold, then deny caching compress page.
 		The value should be in range of (0, 100], by default it was initialized
 		as 20(%).
+
+What:		/sys/fs/f2fs/<disk>/discard_io_aware
+Date:		November 2023
+Contact:	"Chao Yu" <chao@kernel.org>
+Description:	It controls to enable/disable IO aware feature for background discard.
+		By default, the value is 1 which indicates IO aware is on.

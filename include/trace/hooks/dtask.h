@@ -15,7 +15,6 @@ struct mutex;
 struct rt_mutex_base;
 struct rw_semaphore;
 struct task_struct;
-struct percpu_rw_semaphore;
 
 DECLARE_HOOK(android_vh_mutex_wait_start,
 	TP_PROTO(struct mutex *lock),

@@ -27,6 +27,7 @@ DECLARE_RESTRICTED_HOOK(android_rvh_cgroup_force_kthread_migration,
 	TP_PROTO(struct task_struct *tsk, struct cgroup *dst_cgrp, bool *force_migration),
 	TP_ARGS(tsk, dst_cgrp, force_migration), 1);
 
+
 DECLARE_RESTRICTED_HOOK(android_rvh_cpuset_fork,
 	TP_PROTO(struct task_struct *p, bool *inherit_cpus),
 	TP_ARGS(p, inherit_cpus), 1);

@@ -36,6 +36,9 @@ DECLARE_HOOK(android_vh_should_continue_reclaim,
 DECLARE_HOOK(android_vh_file_is_tiny_bypass,
 	TP_PROTO(bool file_is_tiny, bool *bypass),
 	TP_ARGS(file_is_tiny, bypass));
+DECLARE_HOOK(android_vh_tune_swappiness,
+	TP_PROTO(int *swappiness),
+	TP_ARGS(swappiness));
 DECLARE_HOOK(android_vh_check_folio_look_around_ref,
 	TP_PROTO(struct folio *folio, int *skip),
 	TP_ARGS(folio, skip));
@@ -43,9 +46,6 @@ enum scan_balance;
 DECLARE_HOOK(android_vh_tune_scan_type,
 	TP_PROTO(enum scan_balance *scan_type),
 	TP_ARGS(scan_type));
-DECLARE_HOOK(android_vh_tune_swappiness,
-	TP_PROTO(int *swappiness),
-	TP_ARGS(swappiness));
 DECLARE_HOOK(android_vh_scan_abort_check_wmarks,
 	TP_PROTO(bool *check_wmarks),
 	TP_ARGS(check_wmarks));
