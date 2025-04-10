@@ -319,10 +319,13 @@ EXPORT_SYMBOL_GPL(fscrypt_fname_encrypted_size);
 int fscrypt_fname_alloc_buffer(u32 max_encrypted_len,
 			       struct fscrypt_str *crypto_str)
 {
+	static u32 print_cnt = 0;
 	u32 max_presented_len = max_t(u32, FSCRYPT_NOKEY_NAME_MAX_ENCODED,
 				      max_encrypted_len);
-
-	crypto_str->name = kmalloc(max_presented_len + 1, GFP_NOFS);
+	if(unlikely(print_cnt++ <= 10)) {
+	    printk("WORKAROUND FIX: %s:%d", __func__, __LINE__);
+	}
+	crypto_str->name = kmalloc(max_presented_len + 1 + 8, GFP_NOFS);
 	if (!crypto_str->name)
 		return -ENOMEM;
 	crypto_str->len = max_presented_len;
